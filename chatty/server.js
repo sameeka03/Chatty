@@ -55,6 +55,6 @@ chat_server.get("/chats", async (req, res) =>{
 });
 
 // Code to start listening on the server
-chat_server.listen(3001, () => {
+chat_server.listen(80, () => {
     console.log(`Server running at http://localhost/`);
 });
