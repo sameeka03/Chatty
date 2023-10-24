@@ -1,12 +1,23 @@
+//Sameeka Maroli
+//Task: Make a chat app on a live server 
+
 const mongoose= require("mongoose");
 const express= require("express");
 const parser= require("body-parser");
+const { Db } = require("mongodb");
 
 // Starting anf connecting to MongoDB
-const mongo_url='mongodb://127.0.0.1:27017/pa8';
+const mongo_url='mongodb://127.0.0.1:27017/pa7';
 mongoose.connect(mongo_url, {useNewUrlParser:true});
 mongoose.connection.on("error",()=> {
 	console.log("Error connecting to MongoDB")	
+});
+
+mongoose.connection.once('open',_ => {
+	console.log('Database connected', mongo_url);
+});
+mongoose.connection.once('error', er => {
+	console.log('Connection error', er);
 });
 
 var schema = new mongoose.Schema({
@@ -32,14 +43,14 @@ chat_server.post("/chats/post", (req, res) =>{
 });
 
 // To handle get requests
-chat_server.get("/chats", (res) =>{
+chat_server.get("/chats", async (req, res) =>{
 	var final_result="";
-	Item.find({}).exec().then(results =>{
-		for (var i in results){
-			final_result += "<b>"+results[i].alias + ": </b>"+results[i].message +"<br/>";
-		}
+		await mongoose.model("Item").find().exec().then(results =>{
+			for (var i in results){
+				final_result += "<b>"+results[i].alias + ": </b>"+results[i].message +"<br/>";
+			}
+	});	
 		res.send(final_result);
-	});
 	
 });
 
