@@ -1,0 +1,58 @@
+/* Name- Sameeka Maroli
+  Task: Styles the front-end of the chat app
+*/
+#text{
+	display: block;
+	position: fixed;
+	background-color: rgb(187, 191, 245);
+	height: 70%;
+	padding:0;
+	top: 0;
+	width: 100%;
+}
+
+body{
+	margin: 0;
+}
+
+#panel{
+	height: 30%;
+	top: 70%;
+	display: block;
+	position: fixed;
+	width: 100%;
+	background-color: rgb(196, 196, 196);
+	color: rgb(1, 12, 8);
+	}
+
+.Alias{
+	margin-left: 20px;
+	margin-top: 20px;
+	font-weight: bold;
+}
+
+.Message{
+	margin-left: 20px;
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+#ali{
+	margin-left: 23px;
+}
+
+#mess{
+	width: 20%;
+	height: 75px;
+}
+
+#submit{
+	margin-left: 85px;
+	margin-top: 30px;
+}
+
+
+
+
+
+
