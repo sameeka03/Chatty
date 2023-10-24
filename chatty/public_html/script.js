@@ -1,7 +1,10 @@
+//Sameeka maroli
+//Task: Make a chat app
+
 function sendMessage(){
     var httpRequest = new XMLHttpRequest();
-    var aliasName=document.getElementById("ali").value;
-    var messageText=document.getElementById("mess").value;
+    var aliasName=document.getElementById("aliasTextBox").value;
+    var messageText=document.getElementById("messageBox").value;
     let url ="/chats/post/";
     p = fetch(url ,{
       method: 'POST',
@@ -17,7 +20,7 @@ function sendMessage(){
 
     p.then((response) => {
           console.log("Request Sent");
-          document.getElementById("mess").innerText="";
+          document.getElementById("messageBox").innerText="";
         }
     )
     .catch( (error) => {
