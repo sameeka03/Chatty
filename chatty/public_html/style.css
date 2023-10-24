@@ -37,16 +37,16 @@ body{
 	font-weight: bold;
 }
 
-#ali{
+#aliasTextBox{
 	margin-left: 23px;
 }
 
-#mess{
+#messageBox{
 	width: 20%;
 	height: 75px;
 }
 
-#submit{
+#submitButton{
 	margin-left: 85px;
 	margin-top: 30px;
 }
